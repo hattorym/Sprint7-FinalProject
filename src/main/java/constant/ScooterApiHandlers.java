@@ -1,4 +1,4 @@
-package ru.praktikum.yandex;
+package constant;
 
 public class ScooterApiHandlers {
     private final static String BASE_URL = "http://qa-scooter.praktikum-services.ru/";
