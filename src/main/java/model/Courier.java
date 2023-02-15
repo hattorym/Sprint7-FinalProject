@@ -1,10 +1,12 @@
+package model;
+
 public class Courier {
     private String login;
     private String password;
     private String firstName;
     private int id;
 
-//Конструкторы курьера
+    //Конструкторы курьера
     public Courier(String login, String password, String firstName) {
         this.login = login;
         this.password = password;
@@ -19,7 +21,12 @@ public class Courier {
     public Courier(int id) {
         this.id = id;
     }
-//Геттеры и сеттеры
+
+    // конструктор без параметров
+    public Courier() {
+    }
+
+    //Геттеры и сеттеры
     public String getLogin() {
         return login;
     }

@@ -1,3 +1,5 @@
+package model;
+
 import java.util.List;
 
 public class Order {
@@ -11,6 +13,7 @@ public class Order {
     private String comment;
     private List<String> color;
 
+    //Конструктор заказа
     public Order(String firstName, String lastName, String address, int metroStation, String phone, int rentTime, String deliveryDate, String comment, List<String> color) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -23,6 +26,12 @@ public class Order {
         this.color = color;
     }
 
+    // конструктор без параметров
+    public Order() {
+
+    }
+
+    //Геттеры и сеттеры
     public String getFirstName() {
         return firstName;
     }
