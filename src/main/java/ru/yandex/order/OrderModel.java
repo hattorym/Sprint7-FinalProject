@@ -1,5 +1,7 @@
 package ru.yandex.order;
 
+import java.util.List;
+
 public class OrderModel {
     private String firstName;
     private String lastName;
@@ -9,12 +11,12 @@ public class OrderModel {
     private String rentTime;
     private String deliveryDate;
     private String comment;
-    private String[] color;
+    private List<String> color;
 
     public OrderModel() {
     }
 
-    public OrderModel(String[] color) {
+    public OrderModel(List<String> color) {
 
         this.firstName = "Chuck";
         this.lastName = "Norris";
@@ -92,11 +94,11 @@ public class OrderModel {
         this.comment = comment;
     }
 
-    public String[] getColor() {
+    public List<String> getColor() {
         return color;
     }
 
-    public void setColor(String[] color) {
+    public void setColor(List<String> color) {
         this.color = color;
     }
 }
