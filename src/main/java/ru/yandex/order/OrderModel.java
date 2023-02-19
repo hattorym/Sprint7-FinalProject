@@ -1,37 +1,33 @@
-package model;
+package ru.yandex.order;
 
-import java.util.List;
-
-public class Order {
+public class OrderModel {
     private String firstName;
     private String lastName;
     private String address;
-    private int metroStation;
+    private String metroStation;
     private String phone;
-    private int rentTime;
+    private String rentTime;
     private String deliveryDate;
     private String comment;
-    private List<String> color;
+    private String[] color;
 
-    //Конструктор заказа
-    public Order(String firstName, String lastName, String address, int metroStation, String phone, int rentTime, String deliveryDate, String comment, List<String> color) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.metroStation = metroStation;
-        this.phone = phone;
-        this.rentTime = rentTime;
-        this.deliveryDate = deliveryDate;
-        this.comment = comment;
+    public OrderModel() {
+    }
+
+    public OrderModel(String[] color) {
+
+        this.firstName = "Chuck";
+        this.lastName = "Norris";
+        this.address = "LowKick str., 69";
+        this.metroStation = "ChuckStation";
+        this.phone = "+1696661315";
+        this.rentTime = "7";
+        this.deliveryDate = "2023-03-23";
+        this.comment = "Chuck Norris writes code that optimizes itself.";
         this.color = color;
     }
 
-    // конструктор без параметров
-    public Order() {
 
-    }
-
-    //Геттеры и сеттеры
     public String getFirstName() {
         return firstName;
     }
@@ -56,11 +52,11 @@ public class Order {
         this.address = address;
     }
 
-    public int getMetroStation() {
+    public String getMetroStation() {
         return metroStation;
     }
 
-    public void setMetroStation(int metroStation) {
+    public void setMetroStation(String metroStation) {
         this.metroStation = metroStation;
     }
 
@@ -72,11 +68,11 @@ public class Order {
         this.phone = phone;
     }
 
-    public int getRentTime() {
+    public String getRentTime() {
         return rentTime;
     }
 
-    public void setRentTime(int rentTime) {
+    public void setRentTime(String rentTime) {
         this.rentTime = rentTime;
     }
 
@@ -96,11 +92,11 @@ public class Order {
         this.comment = comment;
     }
 
-    public List<String> getColor() {
+    public String[] getColor() {
         return color;
     }
 
-    public void setColor(List<String> color) {
+    public void setColor(String[] color) {
         this.color = color;
     }
 }
