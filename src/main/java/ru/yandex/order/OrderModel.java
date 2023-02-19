@@ -11,12 +11,12 @@ public class OrderModel {
     private String rentTime;
     private String deliveryDate;
     private String comment;
-    private List<String> color;
+    private List<String> colour;
 
     public OrderModel() {
     }
 
-    public OrderModel(List<String> color) {
+    public OrderModel(List<String> colour) {
 
         this.firstName = "Chuck";
         this.lastName = "Norris";
@@ -26,7 +26,7 @@ public class OrderModel {
         this.rentTime = "7";
         this.deliveryDate = "2023-03-23";
         this.comment = "Chuck Norris writes code that optimizes itself.";
-        this.color = color;
+        this.colour = colour;
     }
 
 
@@ -94,11 +94,11 @@ public class OrderModel {
         this.comment = comment;
     }
 
-    public List<String> getColor() {
-        return color;
+    public List<String> getColour() {
+        return colour;
     }
 
-    public void setColor(List<String> color) {
-        this.color = color;
+    public void setColour(List<String> colour) {
+        this.colour = colour;
     }
 }

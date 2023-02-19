@@ -11,10 +11,10 @@ import ru.yandex.courier.*;
 
 public class CreateCourierTests {
     protected final CourierRandomizer courierRandomizer = new CourierRandomizer();
+    int courierId;
     private CourierSteps courierSteps;
     private CourierModel courierModel;
     private CourierAssert courierAssert;
-    int courierId;
 
     @Before
     @Step("Создание тестовых данных курьера")

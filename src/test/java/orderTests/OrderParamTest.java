@@ -19,12 +19,22 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 
 @RunWith(Parameterized.class)
 public class OrderParamTest {
-    private OrderSteps orderSteps;
     private final List<String> colour;
     int track;
+    private OrderSteps orderSteps;
 
     public OrderParamTest(List<String> colour) {
         this.colour = colour;
+    }
+
+    @Parameterized.Parameters(name = "Цвет самоката: {0}")
+    public static Object[][] getScooterColour() {
+        return new Object[][]{
+                {List.of("BLACK")},
+                {List.of("GRAY")},
+                {List.of("BLACK, GRAY")},
+                {List.of()}
+        };
     }
 
     @Before
@@ -36,16 +46,6 @@ public class OrderParamTest {
     @Step("Cancel test order")
     public void CancelTestOrder() {
         orderSteps.cancelOrder(track);
-    }
-
-    @Parameterized.Parameters(name = "Цвет самоката: {0}")
-    public static Object[][] getScooterColour() {
-        return new Object[][]{
-                {List.of("BLACK")},
-                {List.of("GRAY")},
-                {List.of("BLACK, GRAY")},
-                {List.of()}
-        };
     }
 
     @Test

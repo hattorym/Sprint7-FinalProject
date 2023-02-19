@@ -11,11 +11,11 @@ import ru.yandex.courier.*;
 
 public class LoginCourierTests {
     private final CourierRandomizer courierRandomizer = new CourierRandomizer();
+    CourierAssert courierAssert;
+    int courierID;
     private CourierCreds courierCreds;
     private CourierSteps courierSteps;
     private CourierModel courierModel;
-    CourierAssert courierAssert;
-    int idCourier;
 
     @Before
     @Step("Создание тестовых данных для логина курьера")
@@ -33,7 +33,7 @@ public class LoginCourierTests {
     public void courierLoginOkValidData() {
         ValidatableResponse responseLoginCourier = courierSteps.loginCourier(courierCreds);
         courierAssert.loginCourierOk(responseLoginCourier);
-        idCourier = responseLoginCourier.extract().path("id");
+        courierID = responseLoginCourier.extract().path("id");
     }
 
     @Test
@@ -76,8 +76,8 @@ public class LoginCourierTests {
     @After
     @Step("Удаление курьера")
     public void deleteCourier() {
-        if (idCourier != 0) {
-            courierSteps.deleteCourier(idCourier);
+        if (courierID != 0) {
+            courierSteps.deleteCourier(courierID);
         }
     }
 }

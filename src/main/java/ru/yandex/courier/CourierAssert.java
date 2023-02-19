@@ -14,18 +14,21 @@ public class CourierAssert {
                 .statusCode(201)
                 .body("ok", is(true));
     }
+
     @Step("Проверка ответа сервера при неполных данных")
     public void createCourierError(ValidatableResponse response) {
         response.assertThat()
                 .statusCode(400)
                 .body("message", equalTo("Недостаточно данных для создания учетной записи"));
     }
+
     @Step("Проверка ответа сервера при регистрации под ранее зарегистрированным логином")
     public void createCourierSameLoginError(ValidatableResponse response) {
         response.assertThat()
                 .statusCode(409)
                 .body("message", equalTo("Этот логин уже используется. Попробуйте другой."));
     }
+
     @Step("Проверка получения ID при логине с валидными данными")
     public int loginCourierOk(ValidatableResponse response) {
         return response.assertThat()
@@ -34,12 +37,14 @@ public class CourierAssert {
                 .extract()
                 .path("id");
     }
+
     @Step("Проверка ответа сервера при логине с неполными данными")
     public void loginCourierError(ValidatableResponse response) {
         response.assertThat()
                 .statusCode(400)
                 .body("message", equalTo("Недостаточно данных для входа"));
     }
+
     @Step("Проверка ответа сервера при логине с невалидными данными")
     public void loginCourierErrorAccountNotFound(ValidatableResponse response) {
         response.assertThat()
