@@ -1,6 +1,6 @@
-package constant;
+package ru.yandex.constant;
 
-public class ScooterApiHandlers {
+public class ScooterApiEndpoints {
 
     public final static String BASE_URL = "http://qa-scooter.praktikum-services.ru/";
     public final static String COURIER_POST_LOGIN = "/api/v1/courier/login";
